@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>My messaging board</h1>
+    <h1 class="title">Basic messaging board</h1>
+<hr>
 
-    <% messages.map(msg => { %>
-        <p><b><%= msg.user %>:</b> <%= msg.text%>  <%=msg.added.toLocaleTimeString()%></p>
-
-    <% }) %>
-
-<%- include ('partials/msgForm.ejs') %>
+<div class="messages">
+    
+        <% messages.map(msg => { %>
+            <p><b><%= msg.user %>:</b> <%= msg.text%>  <%=msg.added.toLocaleTimeString()%></p>
+    
+        <% }) %>
+    
+</div>
+    <%- include ('partials/msgForm.ejs') %>
 
 </body>
 </html>

@@ -10,6 +10,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({enxtended:true}))
 
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
+
 app.use("/", indexRouter)
 app.listen(port, (req,res)=>{
     console.log("lsitening")
