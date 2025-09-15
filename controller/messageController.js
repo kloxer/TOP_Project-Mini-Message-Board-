@@ -11,6 +11,7 @@
 //   }
 // ];
 
+const Filter = require('bad-words');
 const db = require("../db/queries")
 
 async function showMessageBoard(req,res){
@@ -28,8 +29,8 @@ async function addMessage(req,res) {
     // console.log(req.body)
   
     // messages.push({user: req.body.user, text:req.body.text, added:new Date()})
-
-    await db.addMesage(req.body.user, req.body.text);
+    const filter = new Filter();
+    await db.addMesage(filter.clean(req.body.user), filter.clean(req.body.text));
     res.redirect("/")
     
 }
