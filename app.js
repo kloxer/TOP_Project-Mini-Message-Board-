@@ -1,5 +1,5 @@
 const express=  require("express")
-
+require("dotenv").config();
 const app = express()
 const port = 3003;
 // Set EJS as the view engine

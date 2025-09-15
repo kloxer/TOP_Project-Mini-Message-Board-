@@ -13,7 +13,7 @@
 <div class="messages">
     
         <% messages.map(msg => { %>
-            <p><b><%= msg.user %>:</b> <%= msg.text%>  <%=msg.added.toLocaleTimeString()%></p>
+            <p><b><%= msg.username %>:</b> <%= msg.message %> <%= msg.formatted_created_at %> </p>
     
         <% }) %>
     
